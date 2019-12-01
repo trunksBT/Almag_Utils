@@ -15,4 +15,11 @@ using MaybeStrings = boost::optional<std::vector<std::string>>;
 
 using ReturnCode = bool;
 
+enum class FRAME_TYPE
+{
+   I,
+   SNRM,
+   XID,
+};
+
 #endif  // SRC_UTILS_TYPEALIASES
