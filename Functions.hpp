@@ -10,4 +10,6 @@ inline bool anyOf(const Strings& supportedCommands, const std::string& zeroArgOf
    return std::any_of(supportedCommands.begin(), supportedCommands.end(),
    [&zeroArgOfUserInput](auto command){ return command == zeroArgOfUserInput; });
 }
+
+Strings lex(std::string inCommand, std::string separator);
 }
