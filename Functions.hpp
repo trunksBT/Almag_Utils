@@ -5,11 +5,8 @@
 
 namespace funs
 {
-inline bool anyOf(const Strings& supportedCommands, const std::string& zeroArgOfUserInput)
-{
-   return std::any_of(supportedCommands.begin(), supportedCommands.end(),
-   [&zeroArgOfUserInput](auto command){ return command == zeroArgOfUserInput; });
-}
-
-Strings lex(std::string inCommand, std::string separator);
+bool anyOf(const Strings& supportedCommands, const std::string& zeroArgOfUserInput);
+Strings lex(const std::string& inCommand, const char* separator);
+std::string join(const Strings& inChain);
+std::string toString(const Strings& inChain);
 }
