@@ -8,6 +8,7 @@
 using Hex = unsigned char;
 using HexInt = unsigned int;
 using Hexes = std::vector<Hex>;
+using HexesInt = std::vector<HexInt>;
 
 using Strings = std::vector<std::string>;
 using StringsMatrix = std::vector<std::vector<std::string>>;
