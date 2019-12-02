@@ -6,6 +6,7 @@
 #include <boost/optional.hpp>
 
 using Hex = unsigned char;
+using HexInt = unsigned int;
 using Hexes = std::vector<Hex>;
 
 using Strings = std::vector<std::string>;
