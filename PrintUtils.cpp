@@ -11,7 +11,7 @@ namespace printUtils
 {
 void printHex(const char* msg, Hex input)
 {
-   LOG(trace) << msg << std::hex << static_cast<int>(input);
+   LOG(debug) << msg << std::hex << static_cast<int>(input);
 }
 
 void printFrame(const char* msg, const Hexes& input)
@@ -22,7 +22,7 @@ void printFrame(const char* msg, const Hexes& input)
    {
       stream << std::hex << static_cast<int>(it) << " ";
    }
-   LOG(trace) << stream.str();
+   LOG(debug) << stream.str();
 }
 
 std::string toString(const Hexes& value)
@@ -37,12 +37,12 @@ std::string toString(const Hexes& value)
 
 void printStrings(const Strings& hexes)
 {
-   LOG(trace) << "{";
+   LOG(debug) << "{";
    for (const auto& it : hexes)
    {
-      LOG(trace) << it;
+      LOG(debug) << it;
    }
-   LOG(trace) << "}";
+   LOG(debug) << "}";
 }
 
 }
