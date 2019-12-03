@@ -1,4 +1,5 @@
-#include <Utils/Functions.hpp>
+#include "Utils/Functions.hpp"
+#include <algorithm>
 #include <numeric>
 #include <boost/algorithm/string/join.hpp>
 #include <Utils/TypeAliases.hpp>

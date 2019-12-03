@@ -1,6 +1,5 @@
 #pragma once
 
-#include <algorithm>
 #include <Utils/TypeAliases.hpp>
 
 namespace funs
