@@ -37,10 +37,12 @@ std::string toString(const Hexes& value)
 
 void printStrings(const Strings& hexes)
 {
+   LOG(trace) << "{";
    for (const auto& it : hexes)
    {
       LOG(trace) << it;
    }
+   LOG(trace) << "}";
 }
 
 }
