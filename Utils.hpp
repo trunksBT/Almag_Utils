@@ -106,4 +106,3 @@ const std::string_view IO_PATHS = "IOPaths";
 std::string multiplyString(int times, const std::string& phrase);
 
 #endif  // SRC_UTILS_UTILS
-
