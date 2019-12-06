@@ -2,11 +2,6 @@
 #include <sstream>
 #include <Utils/Logger.hpp>
 
-namespace
-{
-constexpr const char* SPACE_AS_SEPARATOR = " ";
-}
-
 namespace printUtils
 {
 void printHex(const char* msg, Hex input)
@@ -25,23 +20,6 @@ void printFrame(const char* msg, const Hexes& input)
    LOG(debug) << stream.str();
 }
 
-std::string toString(const Hexes& value)
-{
-   std::stringstream stream;
-   for (const auto& it : value)
-   {
-      stream << std::hex << static_cast<int>(it) << SPACE_AS_SEPARATOR;
-   }
-   return stream.str();
-}  /// TODO remove the last space
-
-std::string toString(const Hex& value)
-{
-   std::stringstream stream;
-   stream << std::hex << static_cast<int>(value) << SPACE_AS_SEPARATOR;
-   return stream.str();
-}  /// TODO remove the last space
-
 void printStrings(const Strings& hexes)
 {
    LOG(debug) << "{";
@@ -51,5 +29,4 @@ void printStrings(const Strings& hexes)
    }
    LOG(debug) << "}";
 }
-
 }

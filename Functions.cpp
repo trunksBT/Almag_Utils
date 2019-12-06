@@ -1,6 +1,7 @@
 #include "Utils/Functions.hpp"
 #include <algorithm>
 #include <numeric>
+#include <sstream>
 #include <boost/algorithm/string/join.hpp>
 #include <Utils/TypeAliases.hpp>
 #include <boost/tokenizer.hpp>
@@ -8,7 +9,7 @@
 namespace
 {
 using tokenizer = boost::tokenizer<boost::char_separator<char>>;
-constexpr const char* SPACE = " ";
+constexpr const char* SPACE_AS_SEPARATOR = " ";
 }
 
 namespace funs
@@ -32,9 +33,42 @@ std::string join(const Strings& inChain)
    return std::accumulate(inChain.begin(), inChain.end(), std::string{});
 }
 
-std::string toString(const Strings& inChain)
+Hexes merge(const Hex& flagStart, const Hexes& hdlcBody, const Hexes& sumCRC, const Hex& flagEnd)
 {
-   return boost::algorithm::join(inChain, SPACE);
+   Hexes retVal;
+
+   retVal.push_back(flagStart);
+   for (const auto& it : hdlcBody)
+      retVal.push_back(it);
+   for (const auto& it : sumCRC)
+      retVal.push_back(it);
+   retVal.push_back(flagEnd);
+
+   return retVal;
+}
 }
 
+namespace convert
+{
+std::string toString(const Strings& inChain)
+{
+   return boost::algorithm::join(inChain, SPACE_AS_SEPARATOR);
+}
+
+std::string toString(const Hex& value)
+{
+   std::stringstream stream;
+   stream << std::hex << static_cast<int>(value) << SPACE_AS_SEPARATOR;
+   return stream.str();
+}  /// TODO remove the last space
+
+std::string toString(const Hexes& value)
+{
+   std::stringstream stream;
+   for (const auto& it : value)
+   {
+      stream << toString(it);
+   }
+   return stream.str();
+}
 }
