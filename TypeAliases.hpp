@@ -17,11 +17,17 @@ using MaybeStrings = boost::optional<std::vector<std::string>>;
 
 using ReturnCode = bool;
 
-enum class FRAME_TYPE
+enum class FRAME_TYPE : int
 {
-   I,
-   SNRM,
-   XID,
+   I = 0,
+   U = 1,
+   XID = 2
+};
+
+enum class CTRL_BYTE_U_FRAME : int
+{
+   UA = 10,
+   SNRM = 11
 };
 
 #endif  // SRC_UTILS_TYPEALIASES
