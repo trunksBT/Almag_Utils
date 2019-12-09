@@ -1,5 +1,4 @@
-#ifndef SRC_UTILS_TYPEALIASES
-#define SRC_UTILS_TYPEALIASES
+#pragma once
 
 #include <string>
 #include <vector>
@@ -27,14 +26,3 @@ enum class BYTE_CTRL : int
    XID = 2,
 };
 }
-
-namespace frameU
-{
-enum class BYTE_CTRL : int
-{
-   UA = 10,
-   SNRM = 11
-};
-}
-
-#endif  // SRC_UTILS_TYPEALIASES
