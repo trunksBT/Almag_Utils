@@ -21,6 +21,7 @@ enum class FRAME_TYPE
 {
    I,
    SNRM,
+   U,
    XID,
 };
 
