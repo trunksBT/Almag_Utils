@@ -21,7 +21,6 @@ namespace frameType
 enum class BYTE_CTRL : int
 {
    I = 0,
-   SNRM = 4,
    U = 1,
    XID = 2,
 };
