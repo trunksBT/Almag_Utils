@@ -1,5 +1,4 @@
-#ifndef SRC_UTILS_UTILS
-#define SRC_UTILS_UTILS
+#pragma once
 
 #include <string_view>
 #include <vector>
@@ -13,63 +12,62 @@ enum class OBJECT_TYPE : int
 
 namespace reqNumOfArgsFor
 {
-	constexpr int CREATE_MENU = 3;
-	constexpr int CREATE_COMMAND = 3;
+constexpr int CREATE_MENU = 3;
+constexpr int CREATE_COMMAND = 3;
 
 namespace db
 {
-   constexpr int GET = 2;
-   constexpr int PUT = 4;
-}  // namespace db
+constexpr int GET = 2;
+constexpr int PUT = 4;
+}
 
 namespace ctrl
 {
-   constexpr int DUMMY_SCAN = 2;
-}  // namespace ctrl
-}  // namespace reqNumOfArgsFor
+constexpr int DUMMY_SCAN = 2;
+}
+}
 
 namespace idx
 {
-	static const int COMMAND_OR_ACTION_NAME = 0;
-	static const int OBJECT_NAME = 1;
-	static const int COMMAND_NAME = 2;
+static const int COMMAND_OR_ACTION_NAME = 0;
+static const int OBJECT_NAME = 1;
+static const int COMMAND_NAME = 2;
 }
 
 namespace idxOf
 {
-   constexpr const int COMMAND = 0;
+constexpr const int COMMAND = 0;
 }
 
 namespace ui
 {
 
-   std::string actionHelp();
-	bool validateUserInput(const Strings& userInput, uint32_t numberOfExpectedArgs);
+std::string actionHelp();
+bool validateUserInput(const Strings& userInput, uint32_t numberOfExpectedArgs);
 
 namespace actions
 {
-	static const std::string EXIT = "exit";
-	static const std::string HELP = "help";
-   static const std::string HELP_WHEN_UNKNOWN = " - not supported, please check command constraints, paste 'help' or 'exit'";
-}  // namespace actions
-
-}  // namespace ui
+static const std::string EXIT = "exit";
+static const std::string HELP = "help";
+static const std::string HELP_WHEN_UNKNOWN = " - not supported, please check command constraints, paste 'help' or 'exit'";
+}
+}
 
 namespace defaultVals
 {
-   constexpr const char* SLASH = "/";
-   constexpr const char* UNDERSCORE = "_";
-   constexpr const char* FOR_STRING = "DEFAULT_STRING";
-   constexpr const char* BASH_DOLAR = "$ ";
-   constexpr const char* END_LINE = "\n";
-   constexpr const char* SEPARATOR = ": ";
-   constexpr const uint32_t ZERO = 0;
-   constexpr const uint32_t ONE = 1;
-   constexpr const uint32_t TWO = 2;
-   constexpr const char* CURSOR_SIGN = ":- ";
-   constexpr const char* SPACE_AS_SEPARATOR = " ";  // wskaznik na tablice znakow
-   constexpr const char* INDENT_OF_SIZE_ONE = "---";
-   constexpr static uint8_t NUMBER_OF_DUMMY_SCANS_FOR_9_6_KBPS = 6;
+constexpr const char* SLASH = "/";
+constexpr const char* UNDERSCORE = "_";
+constexpr const char* FOR_STRING = "DEFAULT_STRING";
+constexpr const char* BASH_DOLAR = "$ ";
+constexpr const char* END_LINE = "\n";
+constexpr const char* SEPARATOR = ": ";
+constexpr const uint32_t ZERO = 0;
+constexpr const uint32_t ONE = 1;
+constexpr const uint32_t TWO = 2;
+constexpr const char* CURSOR_SIGN = ":- ";
+constexpr const char* SPACE_AS_SEPARATOR = " ";  // wskaznik na tablice znakow
+constexpr const char* INDENT_OF_SIZE_ONE = "---";
+constexpr static uint8_t NUMBER_OF_DUMMY_SCANS_FOR_9_6_KBPS = 6;
 }
 
 namespace validation
@@ -87,12 +85,12 @@ constexpr const char* SHUTDOWN = "SHUTDOWN";
 
 namespace command
 {
-   const std::string START_POOLING = "StartPooling";
-   const std::string START_POOLING_NULL = "StartPooling_NULL";
-   const std::string CALIBRATE = "Calibrate";
-   const std::string CALIBRATE_NULL = "Calibrate_NULL";
-   const std::string DELIMITER = " ";
-   const std::string UNKNOWN = "Unknown";
+const std::string START_POOLING = "StartPooling";
+const std::string START_POOLING_NULL = "StartPooling_NULL";
+const std::string CALIBRATE = "Calibrate";
+const std::string CALIBRATE_NULL = "Calibrate_NULL";
+const std::string DELIMITER = " ";
+const std::string UNKNOWN = "Unknown";
 }  // namespace command
 
 namespace dbObjects
@@ -104,5 +102,3 @@ const std::string_view IO_PATHS = "IOPaths";
 }  // dbObjects
 
 std::string multiplyString(int times, const std::string& phrase);
-
-#endif  // SRC_UTILS_UTILS
