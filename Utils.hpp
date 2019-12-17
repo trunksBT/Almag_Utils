@@ -42,7 +42,6 @@ constexpr const int COMMAND = 0;
 namespace ui
 {
 
-std::string actionHelp();
 bool validateUserInput(const Strings& userInput, uint32_t numberOfExpectedArgs);
 
 namespace actions
