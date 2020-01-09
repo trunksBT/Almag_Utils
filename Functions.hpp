@@ -12,7 +12,10 @@ Hexes merge(const Hex& flagStart, const Hexes& hdlcBody, const Hexes& sumCRC, co
 
 namespace convert
 {
-std::string toString(const Strings& inChain);
+//std::string toString(const Strings& inChain);
 std::string toString(const Hex& value);
 std::string toString(const Hexes& value);
+std::string toString(const char* msg, Hex input);
+std::string toString(const char* msg, const Hexes& input);
+std::string toString(const Strings& hexes);
 }

@@ -66,7 +66,9 @@ constexpr const uint32_t TWO = 2;
 constexpr const char* CURSOR_SIGN = ":- ";
 constexpr const char* SPACE_AS_SEPARATOR = " ";  // wskaznik na tablice znakow
 constexpr const char* INDENT_OF_SIZE_ONE = "---";
-constexpr static uint8_t NUMBER_OF_DUMMY_SCANS_FOR_9_6_KBPS = 6;
+constexpr static int NUMBER_OF_DUMMY_SCANS_FOR_9_6_KBPS = 6;
+constexpr static uint8_t ONE_DUMMY_SCAN = 1;
+constexpr static int DIRTY_HACK_FOR_PUB_SUB_ZMQ_LOST_MESSAGE = 1;
 }
 
 namespace validation

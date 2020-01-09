@@ -50,10 +50,10 @@ Hexes merge(const Hex& flagStart, const Hexes& hdlcBody, const Hexes& sumCRC, co
 
 namespace convert
 {
-std::string toString(const Strings& inChain)
-{
-   return boost::algorithm::join(inChain, SPACE_AS_SEPARATOR);
-}
+//std::string toString(const Strings& inChain)
+//{
+//   return boost::algorithm::join(inChain, SPACE_AS_SEPARATOR);
+//}
 
 std::string toString(const Hex& value)
 {
@@ -69,6 +69,36 @@ std::string toString(const Hexes& value)
    {
       stream << toString(it);
    }
+   return stream.str();
+}
+
+std::string toString(const char* msg, Hex input)
+{
+   std::stringstream stream;
+   stream << msg << std::hex << static_cast<int>(input);
+   return stream.str();
+}
+
+std::string toString(const char* msg, const Hexes& input)
+{
+   std::stringstream stream;
+   stream << msg;
+   for (const auto& it : input)
+   {
+      stream << std::hex << static_cast<int>(it) << " ";
+   }
+   return stream.str();
+}
+
+std::string toString(const Strings& hexes)
+{
+   std::stringstream stream;
+   stream << "{ ";
+   for (const auto& it : hexes)
+   {
+      stream << it << " ";
+   }
+   stream << " }";
    return stream.str();
 }
 }
