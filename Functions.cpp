@@ -3,6 +3,7 @@
 #include <sstream>
 #include <boost/tokenizer.hpp>
 #include <Utils/TypeAliases.hpp>
+#include <HDLC/HDLCFrame.hpp>
 
 namespace
 {
@@ -87,5 +88,15 @@ std::string toString(const Strings& hexes)
       stream << it << " ";
    stream << " }";
    return stream.str();
+}
+
+std::string toString(std::queue<HDLCFrame>& inQueue)
+{
+   std::stringstream retVal;
+   while (not inQueue.empty()){
+      retVal << toString(inQueue.front().build());
+      inQueue.pop();
+   }
+   return retVal.str();
 }
 }

@@ -1,6 +1,9 @@
 #pragma once
 
+#include <queue>
 #include <Utils/TypeAliases.hpp>
+
+class HDLCFrame;
 
 namespace funs
 {
@@ -12,6 +15,7 @@ Strings lex(const std::string& inCommand, const char* separator);
 
 namespace convert
 {
+std::string toString(std::queue<HDLCFrame>& inQueue);
 std::string toString(const char* msg, const Hexes& input);
 std::string toString(const char* msg, Hex input);
 std::string toString(const Hex& value);

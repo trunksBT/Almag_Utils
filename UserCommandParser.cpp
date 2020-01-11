@@ -3,12 +3,12 @@
 #include <iostream>
 #include <unordered_map>
 #include <boost/algorithm/string/join.hpp>
-#include <boost/tokenizer.hpp>
 #include <boost/optional.hpp>
 #include <boost/optional/optional_io.hpp>
-#include <Utils/Utils.hpp>
-#include <Utils/Logger.hpp>
+#include <boost/tokenizer.hpp>
 #include <Utils/Functions.hpp>
+#include <Utils/Logger.hpp>
+#include <Utils/Utils.hpp>
 
 using tokenizer = boost::tokenizer<boost::char_separator<char>>;
 using namespace defaultVals;
