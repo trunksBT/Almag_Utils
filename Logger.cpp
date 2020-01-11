@@ -1,13 +1,13 @@
 #include "Utils/Logger.hpp"
 
 #include <boost/date_time/posix_time/posix_time_types.hpp>
+#include <boost/log/core.hpp>
 #include <boost/log/expressions.hpp>
+#include <boost/log/support/date_time.hpp>
+#include <boost/log/trivial.hpp>
 #include <boost/log/utility/setup/common_attributes.hpp>
 #include <boost/log/utility/setup/console.hpp>
 #include <boost/log/utility/setup/file.hpp>
-#include <boost/log/support/date_time.hpp>
-#include <boost/log/core.hpp>
-#include <boost/log/trivial.hpp>
 
 namespace expr = boost::log::expressions;
 namespace keywords = boost::log::keywords;
@@ -41,15 +41,15 @@ void init_logger(bool isLogToFile, bool isLogOnStdOut, boost::log::trivial::seve
 
     if (isLogOnStdOut)
     {
-      boost::log::add_console_log(std::cout, keywords::format =
-              expr::stream
-                  << "<"
-                  << expr::format_date_time< boost::posix_time::ptime >(
-                      "TimeStamp", "%H:%M:%S.%f")
-                  << "> "
-                  << boost::log::trivial::severity
-                  << " " << expr::smessage
-      );
+         boost::log::add_console_log(std::cout, keywords::format =
+                 expr::stream
+                     << "<"
+                     << expr::format_date_time< boost::posix_time::ptime >(
+                         "TimeStamp", "%H:%M:%S.%f")
+                     << "> "
+                     << boost::log::trivial::severity
+                     << " " << expr::smessage
+         );
     }
 }
 

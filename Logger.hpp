@@ -1,5 +1,4 @@
-#ifndef SRC_LOGGER
-#define SRC_LOGGER
+#pragma once
 
 #include <string_view>
 #include <boost/log/trivial.hpp>
@@ -25,6 +24,3 @@ constexpr std::string_view getFileName(const char (&fileNamePath)[N])
 
 #define LOG(sv) BOOST_LOG_TRIVIAL(sv) \
     << "[" << getFileName(__FILE__) << "::" << __func__ << ":" << __LINE__ << "] "
-
-#endif //  SRC_LOGGER
-

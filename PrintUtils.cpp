@@ -4,10 +4,6 @@
 
 namespace printUtils
 {
-void printHex(const char* msg, Hex input)
-{
-   LOG(debug) << msg << std::hex << static_cast<int>(input);
-}
 
 void printFrame(const char* msg, const Hexes& input)
 {
