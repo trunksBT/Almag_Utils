@@ -40,7 +40,10 @@ static const std::string HELP_WHEN_UNKNOWN = " - not supported, please check com
 
 namespace defaultVals
 {
-constexpr const char* BASH_DOLAR = "$ ";
+static const std::string BEGIN = "BEGIN";
+static const std::string END = "END";
+static const std::string MESSAGES_SEPARATOR = "===============================================";
+static const std::string HDLC_PARAMETERS_SEPARATOR = "--------------";
 constexpr const char* CURSOR_SIGN = ":- ";
 constexpr const char* END_LINE = "\n";
 constexpr const char* FOR_STRING = "DEFAULT_STRING";
@@ -58,12 +61,6 @@ constexpr static uint8_t ONE_DUMMY_SCAN = 1;
 
 namespace validation
 {
-enum class CODE : int
-{
-    ACCEPTED = 0,
-    CLOSE = 10
-};
-
 constexpr const char* ACCEPTED = "ACCEPTED";
 constexpr const char* REJECTED_UNKNOWN_COMMAND = "REJECTED_UNKNOWN_COMMAND";
 constexpr const char* SHUTDOWN = "SHUTDOWN";
@@ -71,12 +68,8 @@ constexpr const char* SHUTDOWN = "SHUTDOWN";
 
 namespace command
 {
-const std::string CALIBRATE = "Calibrate";
-const std::string CALIBRATE_NULL = "Calibrate_NULL";
 const std::string DELIMITER = " ";
 const std::string START_POOLING = "StartPooling";
-const std::string START_POOLING_NULL = "StartPooling_NULL";
-const std::string UNKNOWN = "Unknown";
 }  // namespace command
 
 namespace dbObjects

@@ -15,13 +15,3 @@ using Strings = std::vector<std::string>;
 using StringsMatrix = std::vector<std::vector<std::string>>;
 
 using ReturnCode = bool;
-
-namespace frameType
-{
-enum class BYTE_CTRL : int
-{
-   I = 0,
-   U = 1,
-   XID = 2,
-};
-}
