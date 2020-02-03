@@ -20,5 +20,5 @@ std::string toString(const char* msg, const Hexes& input);
 std::string toString(const char* msg, Hex input);
 std::string toString(const Hex& value);
 std::string toString(const Hexes& value);
-std::string toString(const Strings& hexes);
+std::string toString(const Strings& hexes, const char* separator = " ");
 }

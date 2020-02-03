@@ -80,12 +80,12 @@ std::string toString(const char* msg, const Hexes& input)
    return stream.str();
 }
 
-std::string toString(const Strings& hexes)
+std::string toString(const Strings& hexes, const char* separator)
 {
    std::stringstream stream;
-   stream << "{ ";
+   stream << "{ " << separator;
    for (const auto& it : hexes)
-      stream << it << " ";
+      stream << it << separator;
    stream << " }";
    return stream.str();
 }
